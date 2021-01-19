@@ -12,6 +12,34 @@ def fib_seq(terms):
 
     return n1
 
+
+def fib_rec(n):
+   
+    if n == 0 or n == 1:
+        return n
+    
+    else:
+        return fib_rec(n-1) + fib_rec(n-2)
+
+
+n = 10
+cache = [None] * (n + 1)
+
+def fib_dyn(n):
+    
+    if cache[n] != None:
+        return cache[n]
+   
+    if n == 0 or n == 1:
+        return n
+    
+    else:
+        
+        m = fib_rec(n-1) + fib_rec(n-2)
+        cache[n] = m
+            
+    return m
+
 terms = int(input("How many sequences? "))
 
 print(f"Fibonacci: {fib_seq(terms)}")
