@@ -12,7 +12,7 @@ def fib_seq(terms):
 
     return n1
 
-
+# recursive solution for the fib sequence
 def fib_rec(n):
    
     if n == 0 or n == 1:
@@ -25,6 +25,7 @@ def fib_rec(n):
 n = 10
 cache = [None] * (n + 1)
 
+# dynamic solution for the fib sequence using memoization
 def fib_dyn(n):
     
     if cache[n] != None:
